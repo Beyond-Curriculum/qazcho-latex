@@ -1,0 +1,70 @@
+\documentclass{national_olymp}
+\usepackage[utf8]{inputenc}
+
+\input{siunitx.cfg}
+
+\title{qazcho_tasks}
+\author{}
+\date{}
+
+% Когда нужен документ на казахском, нижняя строка не должна быть закомментирована
+% \addto\captionsrussian{\renewcommand{\contentsname}{Мазмұны}}
+
+% Если латех не доперает, как разделить какое-то слово на слоги, можно ему помочь. Тогда не будет висюлек некрасивых. (Хотя это не всегда помогает, тогда придется вручную писать вставлять дефис, где надо)
+\usepackage{hyphenat}
+\hyphenation{вос-ста-но-ви-тель-но еті-ле-ді кристалло-гидрата}
+
+\begin{document}
+
+\SetLanguage{Russian}
+% \SetLanguage{Kazakh}
+\UsingTemplate{Tasks}
+% \UsingTemplate{Solutions} % "Tasks" or "Solutions" or "Blank"
+
+\titlepage{Районный}{2022-2023}{9}{chem9-1-tasks}
+% \titlepage{Аудандық}{2022-2023}{10}{chem10-1-tasks}
+
+\tableofcontents
+
+% \include{regulations-kaz}
+\include{regulations-rus}
+
+% \input{problems/great-problem/main}
+
+\input{problems/9/malena_task}
+\input{problems/9/sanzhar3_task}
+\input{problems/9/azim_task}
+\input{problems/9/galym_task}
+
+% \input{problems/9/malena_sol}
+% \input{problems/9/sanzhar3_sol}
+% \input{problems/9/azim_sol}
+% \input{problems/9/galym_sol}
+
+% \input{problems/10/malena_task}
+% \input{problems/10/azim_task}
+% \input{problems/10/milana_task}
+% \input{problems/10/galym_task}
+% \input{problems/10/daniil_task}
+
+% \input{problems/10/malena_sol}
+% \input{problems/10/azim_sol}
+% \input{problems/10/milana_sol}
+% \input{problems/10/galym_sol}
+% \input{problems/10/daniil_sol}
+
+% \input{problems/11/malena_task}
+% \input{problems/11/azim_task}
+% \input{problems/11/zhanibek_task}
+% \input{problems/11/galym_task}
+% \input{problems/11/daniil_task}
+
+
+% \input{problems/11/malena_sol}
+% \input{problems/11/azim_sol}
+% \input{problems/11/zhanibek_sol}
+% \input{problems/11/galym_sol}
+% \input{problems/11/daniil_sol}
+
+
+\end{document}
