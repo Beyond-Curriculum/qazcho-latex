@@ -42,7 +42,7 @@
 
 \RequirePackage{lastpage}
 
-\RequirePackage{fontspec}
+\RequirePackage[no-math]{fontspec}
 \setmainfont{PT Serif}
 
 \RequirePackage{hyperref}
@@ -149,7 +149,7 @@
 % Header and footer
 
 \pagestyle{fancy}
-\headheight = 26pt
+\headheight = 26.1pt
 \fancyhf{}
 \fancyhead[c]{\color{black!30}\small\textbf{\ifnum\value{lang}=1{\olympstage{} этап республиканской олимпиады по химии \olympyear{}.\newline {\ifnum\value{template}=3{Бланки ответов}\else{Комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi}}\fi} теоретического тура. \olympgrade{}-класс.}\else{\olympyear{} республикалық химия олимпиадасының \lowercase\expandafter{\olympstage{}} кезеңі. Теориялық кезеңнің \ifnum\value{template}=3{жауап бланктері}\else{{\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi. \olympgrade{}-сынып.}\fi}}
 \fancyfoot[l]{\thepage/\pageref{LastPage}}
@@ -206,17 +206,24 @@
 \newcounter{problemcount}
 \newcounter{problempartcount} % Will be needed later
 \setcounter{problemcount}{0}
+
+\newcommand{\ProblemTitlePrefix}{\ifnum\value{lang}=1{Задача №\arabic{problemcount}}\else{№\arabic{problemcount} Есеп}\fi}
+
 % argument: problem title and weight
 \newcommand{\problem}[2]{
     \phantomsection
-    \section*{\fontspec{PT Sans}\addtocounter{problemcount}{1}Задача №\arabic{problemcount}. #1}
-    \addcontentsline{toc}{section}{Задача №\arabic{problemcount}. #1 (#2\%)}
+    \section*{\fontspec{PT Sans}\addtocounter{problemcount}{1}\setcounter{problempartcount}{0}\ProblemTitlePrefix. #1}
+    \addcontentsline{toc}{section}{\ProblemTitlePrefix. #1 (#2\%)}
 }
 
 \newcommand{\subproblem}[1]{\subsection*{\fontspec{PT Sans}#1}}
 
 % command for writing isotopes in math mode. \isotope{symbol}{proton number}{mass number}
 \newcommand{\isotope}[3]{\ce{_{#2}^{#3}#1}}
+
+\newcommand{\uqty}[2]{#1~\unit{#2}}
+
+\newcommand{\ProblemAuthor}[1]{\vspace{5pt}Автор: #1}
 
 % Points for the problem. 3-9 arguments: points for the first 1-7 parts, total points, and problem weight
 \newcommand{\ProblemPointsOne}[3]{
@@ -322,43 +329,28 @@
 \newenvironment{solbox}[1]{
   \addtocounter{problempartcount}{1}
   \begin{framed}
-    \begin{minipage}{\textwidth}
-    \setlength{\parskip}{\currentparskip}
+    \setlength{\parskip}{1ex}
     \color{red}
     \raggedright
-    \textbf{\arabic{problemcount}.\arabic{problempartcount}} (#1)
+    \vspace{-\parskip}\textbf{\arabic{problemcount}.\arabic{problempartcount}} (#1)
     
 }{
-    \end{minipage}
+    \color{black}
+    \setlength{\parskip}{0pt}
   \end{framed}
 }
 
 % Same as solbox but for problems with subproblems
 \newenvironment{Solbox}[2]{
-  \addtocounter{problempartcount}{1}
-  \setlength{\currentparskip}{\parskip}
   \begin{framed}
-    \begin{minipage}{\textwidth}
-    \setlength{\parskip}{\currentparskip}
+    \setlength{\parskip}{1ex}
     \color{red}
     \raggedright
-    \textbf{\arabic{problemcount}.#1} (#2)
+    \vspace{-\parskip}\textbf{\arabic{problemcount}.#1} (#2)
     
 }{
-    \end{minipage}
-  \end{framed}
-}
-
-% For solution boxes that are not fitted to one page
-\newenvironment{emptysolbox}{
-  \setlength{\currentparskip}{\parskip}
-  \begin{framed}
-    \begin{minipage}{\textwidth}
-    \setlength{\parskip}{\currentparskip}
-    \color{red}
-    \raggedright
-}{
-    \end{minipage}
+    \color{black}
+    \setlength{\parskip}{0pt}
   \end{framed}
 }
 
@@ -375,8 +367,8 @@
 % Blanks for the problem. Argument - height
 \newcommand{\answerbox}[1]{
   \addtocounter{problempartcount}{1}
-  \begin{minipage}{\textwidth}
-    \textbf{\arabic{problemcount}.\arabic{problempartcount}}\\
+  \noindent\begin{minipage}{\textwidth}
+    \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{0.5ex}
 
     \fbox{
       \begin{minipage}[c][#1][t]{\textwidth}
@@ -389,7 +381,7 @@
 
 % Command that creates a blank without putting a number before it
 \newcommand{\Answerbox}[1]{
-    \begin{minipage}{\textwidth}
+    \noindent\begin{minipage}{\textwidth}
         \fbox{
           \begin{minipage}[c][#1][t]{\textwidth}
             \color{white}{nothing}
@@ -401,8 +393,8 @@
 
 % Answer box with custom numeration (for problem with 2 and more subproblems). Arguments: counter, height
 \newcommand{\ansbox}[2]{
-    \begin{minipage}{\textwidth}
-        \textbf{\arabic{problemcount}.#1}\\
+    \noindent\begin{minipage}{\textwidth}
+        \textbf{\arabic{problemcount}.#1}\vspace{0.5ex}
         
         \fbox{
           \begin{minipage}[c][#2][t]{\textwidth}
