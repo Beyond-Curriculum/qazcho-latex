@@ -145,13 +145,17 @@
     }\fi
 }
 
+\newcounter{practical}
+\setcounter{practical}{0}
+\newcommand{\Practical}{\setcounter{practical}{1}}
+
 
 % Header and footer
 
 \pagestyle{fancy}
 \headheight = 26.1pt
 \fancyhf{}
-\fancyhead[c]{\color{black!30}\small\textbf{\ifnum\value{lang}=1{\olympstage{} этап республиканской олимпиады по химии \olympyear{}.\newline {\ifnum\value{template}=3{Бланки ответов}\else{Комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi}}\fi} теоретического тура. \olympgrade{}-класс.}\else{\olympyear{} республикалық химия олимпиадасының \lowercase\expandafter{\olympstage{}} кезеңі. Теориялық кезеңнің \ifnum\value{template}=3{жауап бланктері}\else{{\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi. \olympgrade{}-сынып.}\fi}}
+\fancyhead[c]{\color{black!30}\small\textbf{\ifnum\value{lang}=1{\olympstage{} этап республиканской олимпиады по химии \olympyear{}.\newline {\ifnum\value{template}=3{Бланки ответов}\else{Комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi}}\fi} {\ifnum\value{practical}=0{теоретического}\else{практического}\fi} тура. \olympgrade{}-класс.}\else{\olympyear{} республикалық химия олимпиадасының \lowercase\expandafter{\olympstage{}} кезеңі. {\ifnum\value{practical}=0{Теориялық}\else{Практикалық}\fi} кезеңнің \ifnum\value{template}=3{жауап бланктері}\else{{\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi. \olympgrade{}-сынып.}\fi}}
 \fancyfoot[l]{\thepage/\pageref{LastPage}}
 \fancyfoot[c]{\filename}
 \fancyfoot[r]{\href{https://qazcho.kz}{qazcho.kz} | \href{https://qazolymp.kz}{qazolymp.kz}}
