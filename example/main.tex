@@ -1,5 +1,5 @@
 \documentclass{national_olymp}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 
 \input{siunitx.cfg}
 
@@ -8,28 +8,30 @@
 \date{}
 
 % Когда нужен документ на казахском, нижняя строка не должна быть закомментирована
-% \addto\captionsrussian{\renewcommand{\contentsname}{Мазмұны}}
+\addto\captionsrussian{\renewcommand{\contentsname}{Мазмұны}}
 
 % Если латех не доперает, как разделить какое-то слово на слоги, можно ему помочь. Тогда не будет висюлек некрасивых. (Хотя это не всегда помогает, тогда придется вручную писать вставлять дефис, где надо)
 \usepackage{hyphenat}
 \hyphenation{вос-ста-но-ви-тель-но еті-ле-ді кристалло-гидрата}
 
+\usepackage[italic]{mathastext}
+
 \begin{document}
 
-\SetLanguage{Russian}
-% \SetLanguage{Kazakh}
+% \SetLanguage{Russian}
+\SetLanguage{Kazakh}
 \UsingTemplate{Tasks}
 % \UsingTemplate{Solutions} % "Tasks" or "Solutions" or "Blank"
 
 % \Practical
 
-\titlepage{Районный}{2022-2023}{10}{chem10-1-tasks}
-% \titlepage{Аудандық}{2022-2023}{10}{chem10-1-tasks}
+% \titlepage{Районный}{2022-2023}{10}{chem10-1-blank}
+\titlepage{Аудандық}{2022-2023}{10}{chem10-1-tasks}
 
 \tableofcontents
 
-% \include{regulations-kaz}
-\include{regulations-rus}
+\include{regulations-kaz}
+% \include{regulations-rus}
 
 \input{problems/great-problem/author-task}
 % \input{problems/great-problem/author-sol}

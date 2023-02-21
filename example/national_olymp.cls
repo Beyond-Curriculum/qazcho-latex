@@ -10,25 +10,28 @@
 
 % Packages
 
+\RequirePackage{geometry}
+\geometry{margin=2.5cm}
+
 \RequirePackage{enumitem}
 
 \RequirePackage{framed}
 
 \RequirePackage{titlesec}
 
-\RequirePackage[version=4]{mhchem} % for chemical equations
+\RequirePackage[table]{xcolor}
+\RequirePackage{xcolor}
+
+\RequirePackage{chemformula} % for chemical equations
+\NewCommandCopy{\CH}{\ch}
+\let\ch\relax
+
 \RequirePackage{siunitx} % for writing units
 \RequirePackage{amsmath, amsfonts, amssymb}
 
 \RequirePackage{float}
 
 \RequirePackage{graphicx}
-
-\RequirePackage{geometry}
-\geometry{margin=2.5cm}
-
-\RequirePackage[table]{xcolor}
-\RequirePackage{xcolor}
 
 \RequirePackage{tabularx}
 \newcolumntype{Y}{>{\centering\arraybackslash}X} % new column that centers X columns
@@ -40,10 +43,9 @@
 
 \RequirePackage{fancyhdr}
 
-\RequirePackage{lastpage}
-
 \RequirePackage[no-math]{fontspec}
 \setmainfont{PT Serif}
+\defaultfontfeatures{Mapping=tex-text}
 
 \RequirePackage{hyperref}
 
@@ -53,6 +55,8 @@
     filecolor=magenta,
     urlcolor=cyan
 }
+
+\RequirePackage{lastpage}
 
 
 % Body of the class

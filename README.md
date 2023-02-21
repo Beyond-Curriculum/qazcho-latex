@@ -175,13 +175,13 @@
 
 #### Химические формулы
 
-Для химических формул используется пакет `mhchem`. Ознакомитсья с пакетом можно из [Chemistry Stack Exchange Meta](https://chemistry.meta.stackexchange.com/questions/86/faq-how-can-i-format-math-chemistry-expressions-on-chemistry-stack-exchange). Стоит заметить, что команды, которые используются на этом форуме для единиц измерения мы использовать не можем, пользоваться надо только командами `siunitx`. В принципе, знаний из этого поста более, чем достаточно, но на всякий случай оставлю ссылку на [документацию `mhchem`](https://www.ctan.org/pkg/mhchem).
+Для химических формул используется пакет `chemformula`. Синтаксис такой же, как и в пакете `mhchem`, с которым можно ознакомиться на [Chemistry Stack Exchange Meta](https://chemistry.meta.stackexchange.com/questions/86/faq-how-can-i-format-math-chemistry-expressions-on-chemistry-stack-exchange). Стоит заметить, что команды, которые используются на этом форуме для единиц измерения мы использовать не можем, пользоваться надо только командами `siunitx`. В принципе, знаний из этого поста более, чем достаточно, но на всякий случай оставлю ссылку на [документацию `chemformula`](https://www.ctan.org/pkg/chemformula).
 
-В команде `\ce{}` нельзя использовать кириллицу, поэтому надо помещать ее в команду `\text{}`. Пример:
+Есть одно замечание --- вместо стандартной команды `\ch{}` мы используем команду `\CH{}`, так как команда `\ch{}` занята из-за того, что мы используем пакеты для написания текста на кириллице. Пример:
 
 ```latex
 \begin{gather}
-    \notag \ce{A ->[k] \text{продукты}} \\
+    \notag \CH{A -> [$k$] \text{продукты}} \\
     \label{eq:first-order-one-reag} v_1 = k \cdot [A] = - \frac{dA}{dt}
 \end{gather}
 ```
