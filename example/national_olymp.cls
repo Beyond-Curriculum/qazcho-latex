@@ -6,7 +6,7 @@
 \DeclareOption{twocolumn}{\OptionNotUsed}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-\LoadClass[a4paper, 12pt]{article}
+\LoadClass[a4paper]{article}
 
 % Packages
 
@@ -27,6 +27,7 @@
 \let\ch\relax
 
 \RequirePackage{siunitx} % for writing units
+\DeclareSIUnit\angstrom{\text{Å}}
 \RequirePackage{amsmath, amsfonts, amssymb}
 
 \RequirePackage{float}
@@ -57,6 +58,8 @@
 }
 
 \RequirePackage{lastpage}
+
+\RequirePackage{tikz, lipsum, wrapfig, indentfirst}
 
 
 % Body of the class
@@ -227,11 +230,26 @@
 \newcommand{\subproblem}[1]{\subsection*{\fontspec{PT Sans}#1}}
 
 % command for writing isotopes in math mode. \isotope{symbol}{proton number}{mass number}
-\newcommand{\isotope}[3]{\ce{_{#2}^{#3}#1}}
+\newcommand{\isotope}[3]{\CH{_{#2}^{#3}#1}}
 
-\newcommand{\uqty}[2]{#1~\unit{#2}}
+\newcommand{\uqty}[2]{$#1$~\unit{#2}}
 
-\newcommand{\ProblemAuthor}[1]{\vspace{5pt}Автор: #1}
+\newcommand{\ProblemAuthor}[1]{\noindent\vspace{5pt}Автор: #1}
+
+\newcommand{\setarraystretch}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\assignvar}[2]{\newcommand{#1}{#2}}
+
+
+\newenvironment{Table}{
+    \renewcommand{\arraystretch}{1.3}
+    \begin{table}[H]
+}{
+    \end{table}
+    \renewcommand{\arraystretch}{1}
+}
+
+
 
 % Points for the problem. 3-9 arguments: points for the first 1-7 parts, total points, and problem weight
 \newcommand{\ProblemPointsOne}[3]{
