@@ -162,7 +162,7 @@
 \pagestyle{fancy}
 \headheight = 26.1pt
 \fancyhf{}
-\fancyhead[c]{\color{black!30}\small\textbf{\ifnum\value{lang}=1{\olympstage{} этап республиканской олимпиады по химии \olympyear{}.\newline {\ifnum\value{template}=3{Бланки ответов}\else{Комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi}}\fi} {\ifnum\value{practical}=0{теоретического}\else{практического}\fi} тура. \olympgrade{}-класс.}\else{\olympyear{} республикалық химия олимпиадасының \lowercase\expandafter{\olympstage{}} кезеңі. {\ifnum\value{practical}=0{Теориялық}\else{Практикалық}\fi} кезеңнің \ifnum\value{template}=3{жауап бланктері}\else{{\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi. \olympgrade{}-сынып.}\fi}}
+\fancyhead[c]{\color{black!30}\small\textbf{\ifnum\value{lang}=1{\olympstage{} этап республиканской олимпиады по химии \olympyear{}.\newline {\ifnum\value{template}=3{Бланки ответов}\else{Комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi}}\fi} {\ifnum\value{practical}=0{теоретического}\else{практического}\fi} тура. \olympgrade{}-класс.}\else{\olympyear{} республикалық химия олимпиадасының \lowercase\expandafter{\olympstage{}} кезеңі. {\ifnum\value{practical}=0{Теориялық}\else{Практикалық}\fi} кезеңнің \ifnum\value{template}=3{жауап бланктары}\else{{\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi. \olympgrade{}-сынып.}\fi}}
 \fancyfoot[l]{\thepage/\pageref{LastPage}}
 \fancyfoot[c]{\filename}
 \fancyfoot[r]{\href{https://qazcho.kz}{qazcho.kz} | \href{https://qazolymp.kz}{qazolymp.kz}}
@@ -171,29 +171,40 @@
 % Title
 
 \renewcommand{\titlepage}[4]{
-  \thispagestyle{empty}
-  \fontspec{PT Sans}
+    \thispagestyle{empty}
+    \fontspec{PT Sans}
 
-  \vspace*{\fill}
-  \input{periodictable}
+    % \vspace*{\fill}
 
-  \vspace*{\fill}
-  \noindent\begin{minipage}{0.4\textwidth}
-    \includegraphics[width=\textwidth]{qazcho_logo}
-  \end{minipage}
+    \section*{\ifnum\value{lang}=1{Константы}\else{Тұрақтылар}\fi}
+    \vspace{1ex}
 
-  \begin{raggedright}
+    \ifnum\value{lang}=1{
+        \input{misc/constants-rus}
+    }\else{
+        \input{misc/constants-kaz}
+    }\fi
+
+    \vspace*{\fill}
+    \noindent\input{misc/periodictable}
+
+    \vspace*{\fill}
+    \noindent\begin{minipage}{0.4\textwidth}
+    \includegraphics[width=\textwidth]{misc/qazcho_logo}
+    \end{minipage}
+
+    \begin{raggedright}
     \textbf{\ifnum\value{lang}=1{Республиканская олимпиада по химии}\else{Республикалық химия олимпиадасы}\fi}\linebreak\nopagebreak
     {#1} {\ifnum\value{lang}=1{этап}\else{кезең}\fi} ({#2}).\linebreak\nopagebreak
-    \ifnum\value{lang}=1{\ifnum\value{template}=3{Бланки ответов теоретического тура}\else{Официальный комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi} {#3}-класса}\fi}\else{\ifnum\value{template}=3{Теориялық кезеңнің жауап бланктері}\else{{#3}-сыныпқа арналған ресми {\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi}\fi.
+    \ifnum\value{lang}=1{\ifnum\value{template}=3{Бланки ответов теоретического тура}\else{Официальный комплект {\ifnum\value{template}=1{заданий}\else{\ifnum\value{template}=2{решений}\fi}\fi} {#3}-класса}\fi}\else{\ifnum\value{template}=3{Теориялық кезеңнің жауап бланктары}\else{{#3}-сыныпқа арналған ресми {\ifnum\value{template}=1{тапсырмалар}\else{\ifnum\value{template}=2{шешімдер}\fi}\fi} жинағы}\fi}\fi.
     \clearpage
-  \end{raggedright}
+    \end{raggedright}
 
-  \newcommand{\olympstage}{#1}
-  \newcommand{\olympyear}{#2}
-  \newcommand{\olympgrade}{#3}
-  \newcommand{\filename}{#4}
-  \fontspec{PT Serif}
+    \newcommand{\olympstage}{#1}
+    \newcommand{\olympyear}{#2}
+    \newcommand{\olympgrade}{#3}
+    \newcommand{\filename}{#4}
+    \fontspec{PT Serif}
 }
 
 \newenvironment{regulations}{
@@ -207,7 +218,7 @@
 
 % creates an "icon" of the element in the periodic table
 \newcommand{\chemelement}[3]{
-  \begin{minipage}[c][30pt]{0.03\textwidth}\centering\tiny{#1}\vspace{1pt}\linebreak \normalsize{#2}\vspace{1pt}\linebreak\tiny{#3}\end{minipage}
+    \begin{minipage}[c][30pt]{0.03\textwidth}\centering\scriptsize{#1}\vspace{1pt}\linebreak \normalsize{#2}\vspace{1pt}\linebreak\scriptsize{#3}\end{minipage}
 }
 
 \newlength{\currentparskip}
@@ -394,42 +405,36 @@
 \newcommand{\answerbox}[1]{
   \addtocounter{problempartcount}{1}
   \noindent\begin{minipage}{\textwidth}
-    \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{0.5ex}
-
-    \fbox{
-      \begin{minipage}[c][#1][t]{\textwidth}
-        \color{white}{nothing}
-      \end{minipage}
-    }
-    \vspace{2ex}
+    \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{-2ex}
+    \begin{framed}
+      \vspace*{#1}
+    \end{framed}
   \end{minipage}
+  \vspace{2ex}
 }
 
 % Command that creates a blank without putting a number before it
 \newcommand{\Answerbox}[1]{
-    \noindent\begin{minipage}{\textwidth}
-        \fbox{
-          \begin{minipage}[c][#1][t]{\textwidth}
-            \color{white}{nothing}
-          \end{minipage}
-        }
+    \vspace*{-2ex}\noindent\begin{minipage}{\textwidth}
+        \begin{framed}
+          \vspace*{#1}
+        \end{framed}
         \vspace{2ex}
     \end{minipage}
 }
 
 % Answer box with custom numeration (for problem with 2 and more subproblems). Arguments: counter, height
-\newcommand{\ansbox}[2]{
-    \noindent\begin{minipage}{\textwidth}
-        \textbf{\arabic{problemcount}.#1}\vspace{0.5ex}
-        
-        \fbox{
-          \begin{minipage}[c][#2][t]{\textwidth}
-            \color{white}{nothing}
-          \end{minipage}
-        }
-        \vspace{2ex}
-    \end{minipage}
+\newcommand{\ansbox}[1]{
+  \noindent\begin{minipage}{\textwidth}
+    \textbf{\arabic{problemcount}.#1}\vspace{-2ex}
+    \begin{framed}
+      \vspace*{#2}
+    \end{framed}
+  \end{minipage}
+  \vspace{2ex}
 }
+
+
 
 \newcommand{\problempart}{
   \addtocounter{problempartcount}{1}
