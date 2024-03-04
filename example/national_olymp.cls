@@ -66,6 +66,12 @@
 
 % General
 
+% a command for inserting an invisible box of a given height
+\newcommand{\filler}[1]{
+    \begin{minipage}[][#1]{1pt}
+    \end{minipage}
+}
+
 % \setlength{\parskip}{1.8ex}
 \titlespacing*\section{0pt}{12pt plus 4pt minus 2pt}{-2pt plus 2pt minus 2pt}
 \renewcommand{\em}[1]{\textbf{#1}}
@@ -401,10 +407,10 @@
 
 % A command for adding chemical compound in tables for organic chemistry problems
 % Path is relative to the main directory
-\newcommand{\chemcompound}[1]{
-    \begin{minipage}[c][2.5cm][c]{0.33\textwidth}
+\newcommand{\chemcompound}[2][2.5cm]{
+    \begin{minipage}[c][#1][c]{0.33\textwidth}
         \centering
-        \includegraphics[keepaspectratio=true, width = \linewidth]{#1}
+        \includegraphics[width = \linewidth, height = #1, keepaspectratio=true]{#2}
     \end{minipage}
 }
 

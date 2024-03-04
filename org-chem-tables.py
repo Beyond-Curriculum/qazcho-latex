@@ -1,6 +1,8 @@
 # Names of the unknown compounds
-compounds = ["I", "II", "III", "A"]
-file = "Solution"
+compounds = ["I", "II", "III", "A", "B"]
+file = "Solution" # Either "Solution" or "Blank"
+
+
 # Don't edit what's below
 
 
@@ -11,8 +13,9 @@ if ((file != "Blank") and (file != "Solution")):
   print("Please rewrite the type of document you need this table for.")
 
 
-begin = r"""\begin{tabularx}{\textwidth}{|Y|Y|Y|}
-\hline
+begin = r"""\noindent
+\begin{tabularx}{\textwidth}{|Y|Y|Y|}
+\hline\rowcolor{gray!25}
 """
 close = r"\end{tabularx}"
 
@@ -26,29 +29,29 @@ mainCode = ""
 # Fill the rows that have 3 columns
 while (counter < fullRows*3):
   if (counter+1) % 3 != 0:
-    mainCode = mainCode + r"\cellcolor{gray!25}\textbf{" + compounds[counter] + "} & "
+    mainCode = mainCode + r"\textbf{" + compounds[counter] + "} & "
   else:
-    mainCode = mainCode + r"\cellcolor{gray!25}\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\hline" + "\n"
+    mainCode = mainCode + r"\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\hline" + "\n"
 
     if (file == "Blank"):
-      mainCode += r"""\color{white}{white}\vspace{2.5cm} & \color{white}{white}\vspace{2.5cm} & \color{white}{white}\vspace{2.5cm} \\
-\hline
+      mainCode += r"""\filler{2.5cm} & \filler{2.5cm} & \filler{2.5cm} \\
+\hline\rowcolor{gray!25}
 """
     else:
       mainCode += r"""\chemcompound{} & \chemcompound{} & \chemcompound{} \\
-\hline
+\hline\rowcolor{gray!25}
 """
   
   counter += 1
 
 
 # Fill the remaining row
-while(counter < (fullRows*3 + extracells)):
+while(counter < len(compounds)):
   if (extracells == 1):
-    mainCode = mainCode + r"\cellcolor{gray!25}\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\cline{1-1}" + "\n"
+    mainCode = mainCode + r"\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\cline{1-1}" + "\n"
 
     if (file == "Blank"):
-      mainCode += r"""\color{white}{white}\vspace{2.5cm} \\
+      mainCode += r"""\filler{2.5cm} \\
 \cline{1-1}
 """
     else:
@@ -57,13 +60,13 @@ while(counter < (fullRows*3 + extracells)):
 """
 
   else:
-    if (counter+1) % 2 == 0:
-      mainCode = mainCode + r"\cellcolor{gray!25}\textbf{" + compounds[counter] + "} & "
+    if (counter+1) % 3 == 1:
+      mainCode = mainCode + r"\textbf{" + compounds[counter] + "} & "
     else:
-      mainCode = mainCode + r"\cellcolor{gray!25}\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\cline{1-2}" + "\n"
+      mainCode = mainCode + r"\textbf{" + compounds[counter] + r"} \\" + "\n" + r"\cline{1-2}" + "\n"
 
       if (file == "Blank"):
-        mainCode += r"""\color{white}{white}\vspace{2.5cm} & \color{white}{white}\vspace{2.5cm} \\
+        mainCode += r"""\filler{2.5cm} & \filler{2.5cm} \\
 \cline{1-2}
 """
       else:
