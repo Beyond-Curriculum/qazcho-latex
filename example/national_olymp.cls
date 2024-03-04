@@ -420,35 +420,39 @@
 
 % Blanks for the problem. Argument - height
 \newcommand{\answerbox}[1]{
-  \addtocounter{problempartcount}{1}
-  \noindent\begin{minipage}{\textwidth}
-    \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{-2ex}
-    \begin{framed}
-      \vspace*{#1}
-    \end{framed}
-  \end{minipage}
-  \vspace{2ex}
+    \addtocounter{problempartcount}{1}
+    \raggedright
+    \begin{minipage}{\textwidth}
+        \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{0.5ex} \\
+        \begin{tikzpicture}
+            \draw (0, 0) rectangle (\textwidth, -#1);
+        \end{tikzpicture}
+    \end{minipage}
+    \justifying
+    \vspace{2ex}
 }
 
 % Command that creates a blank without putting a number before it
 \newcommand{\Answerbox}[1]{
-    \vspace*{-2ex}\noindent\begin{minipage}{\textwidth}
-        \begin{framed}
-          \vspace*{#1}
-        \end{framed}
-        \vspace{2ex}
-    \end{minipage}
+    \raggedright
+    \begin{tikzpicture}
+        \draw (0, 0) rectangle (\textwidth, -#1);
+    \end{tikzpicture}
+    \justifying
+    \vspace{2ex}
 }
 
 % Answer box with custom numeration (for problem with 2 and more subproblems). Arguments: counter, height
 \newcommand{\ansbox}[2]{
-  \noindent\begin{minipage}{\textwidth}
-    \textbf{\arabic{problemcount}.#1}\vspace{-2ex}
-    \begin{framed}
-      \vspace*{#2}
-    \end{framed}
-  \end{minipage}
-  \vspace{2ex}
+    \raggedright
+    \begin{minipage}{\textwidth}
+        \textbf{\arabic{problemcount}.#1}\vspace{0.5ex} \\
+        \begin{tikzpicture}
+            \draw (0, 0) rectangle (\textwidth, -#2);
+        \end{tikzpicture}
+    \end{minipage}
+    \justifying
+    \vspace{2ex}
 }
 
 
