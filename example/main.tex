@@ -7,8 +7,12 @@
 \author{}
 \date{}
 
-% Когда нужен документ на казахском, нижняя строка не должна быть закомментирована
-\addto\captionsrussian{\renewcommand{\contentsname}{Мазмұны}}
+% Когда нужен документ на казахском, нижняя команда не должна быть закомментирована
+% \addto\captionsrussian{
+%     \renewcommand{\contentsname}{Мазмұны}
+%     \renewcommand{\figurename}{Сурет}
+%     \renewcommand{\tablename}{Кесте}
+% }
 
 % Если латех не доперает, как разделить какое-то слово на слоги, можно ему помочь. Тогда не будет висюлек некрасивых. (Хотя это не всегда помогает, тогда придется вручную писать вставлять дефис, где надо)
 \usepackage{hyphenat}
@@ -18,25 +22,25 @@
 
 \begin{document}
 
-% \SetLanguage{Russian}
-\SetLanguage{Kazakh}
+\SetLanguage{Russian}
+% \SetLanguage{Kazakh}
 \UsingTemplate{Tasks}
 % \UsingTemplate{Solutions} % "Tasks" or "Solutions" or "Blank"
 
 % \Practical
 
-% \titlepage{Районный}{2022-2023}{10}{chem10-1-blank}
-\titlepage{Аудандық}{2022-2023}{10}{chem10-1-tasks}
+\titlepage{Районный}{2023-2024}{10}{chem10-1-blank}
+% \titlepage{Аудандық}{2022-2023}{10}{chem10-1-tasks}
 
 % \tableofcontents
 % \clearpage
 
-\include{regulations-kaz}
-% \include{regulations-rus}
+% \include{regulations-kaz}
+\include{regulations-rus}
 
 \input{problems/great-problem/author-task}
 % \input{problems/great-problem/author-sol}
-% \input{problems/great-problem/author-blank}
+\input{problems/great-problem/author-blank}
 
 
 \end{document}

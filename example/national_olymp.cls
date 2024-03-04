@@ -80,14 +80,18 @@
 \newcommand{\gml}{\gram\per\ml}
 \newcommand{\kgm}{\kilo\gram\per\meter\cubed}
 \newcommand{\jmol}{\joule\per\mole}
+\newcommand{\jg}{\joule\per\gram}
 \newcommand{\jmolk}{\joule\per\mole\per\kelvin}
 \newcommand{\jmolc}{\joule\per\mole\per\celsius}
 \newcommand{\jgc}{\joule\per\gram\per\celsius}
 \newcommand{\jgk}{\joule\per\gram\per\kelvin}
 \newcommand{\kj}{\kilo\joule}
-\newcommand{\kjg}{\kilo\joule\per\gram}
-\newcommand{\jg}{\joule\per\gram}
 \newcommand{\kjmol}{\kilo\joule\per\mole}
+\newcommand{\kjg}{\kilo\joule\per\gram}
+\newcommand{\kjmolk}{\kilo\joule\per\mole\per\kelvin}
+\newcommand{\kjmolc}{\kilo\joule\per\mole\per\celsius}
+\newcommand{\kjgc}{\kilo\joule\per\gram\per\celsius}
+\newcommand{\kjgk}{\kilo\joule\per\gram\per\kelvin}
 \newcommand{\mets}{\meter\per\second}
 \newcommand{\kmh}{\kilo\meter\per\hour}
 \newcommand{\kpa}{\kilo\pascal}
@@ -99,6 +103,10 @@
 \newcommand{\cmol}{\coulomb\per\mole}
 \newcommand{\gmol}{\gram\per\mole}
 \newcommand{\kgmol}{\kilo\gram\per\mole}
+\newcommand{\ev}{\electronvolt}
+
+\DeclareSIUnit[quantity-product = \,]{\atm}{atm}
+\DeclareSIUnit[quantity-product = \,]{\torr}{torr}
 % \kg already exists, as well as \ms, \mm, \nm, \cm, \pm and others
 
 % Switching languages
@@ -262,16 +270,16 @@
 
 
 
-% Points for the problem. 3-9 arguments: points for the first 1-7 parts, total points, and problem weight
-\newcommand{\ProblemPointsOne}[3]{
+% Points for the problem. 2-9 arguments: points for the first 1-7 parts, total points, and problem weight
+\newcommand{\ProblemPointsOne}[2]{
   \vspace{-\SpaceBeforeTable}
   \begin{table}[H]
   \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \begin{tabularx}{\textwidth}{|X|X|}
       \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+      \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
       \hline
-      #1 & #2 & #3 \\
+      #1 & #2 \\
       \hline
     \end{tabularx}
   \end{table}
@@ -396,7 +404,7 @@
 \newcommand{\chemcompound}[1]{
     \begin{minipage}[c][2.5cm][c]{0.33\textwidth}
         \centering
-        \includegraphics{#1}
+        \includegraphics[keepaspectratio=true, width = \linewidth]{#1}
     \end{minipage}
 }
 
@@ -424,7 +432,7 @@
 }
 
 % Answer box with custom numeration (for problem with 2 and more subproblems). Arguments: counter, height
-\newcommand{\ansbox}[1]{
+\newcommand{\ansbox}[2]{
   \noindent\begin{minipage}{\textwidth}
     \textbf{\arabic{problemcount}.#1}\vspace{-2ex}
     \begin{framed}
