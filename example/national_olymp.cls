@@ -281,101 +281,101 @@
 
 % Points for the problem. 2-9 arguments: points for the first 1-7 parts, total points, and problem weight
 \newcommand{\ProblemPointsOne}[2]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsTwo}[4]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsThree}[5]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.3} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 & #5 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\arabic{problemcount}.3} &  \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 & #5 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsFour}[6]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.3} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.4} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 & #5 & #6 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\arabic{problemcount}.3} &  \textbf{\arabic{problemcount}.4} & \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 & #5 & #6 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsFive}[7]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.3} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.4} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.5} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 & #5 & #6 & #7 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\arabic{problemcount}.3} & \textbf{\arabic{problemcount}.4} & \textbf{\arabic{problemcount}.5} & \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 & #5 & #6 & #7 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsSix}[8]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.3} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.4} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.5} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.6} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 & #5 & #6 & #7 & #8 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\arabic{problemcount}.3} & \textbf{\arabic{problemcount}.4} & \textbf{\arabic{problemcount}.5} & \textbf{\arabic{problemcount}.6} & \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 & #5 & #6 & #7 & #8 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 \newcommand{\ProblemPointsSeven}[9]{
-  \vspace{-\SpaceBeforeTable}
-  \begin{table}[H]
-  \small
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|}
-      \hline
-      \cellcolor{gray!45} \textbf{\arabic{problemcount}.1} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.2} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.3} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.4} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.5} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.6} & \cellcolor{gray!45} \textbf{\arabic{problemcount}.7} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \cellcolor{gray!45} \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
-      \hline
-      #1 & #2 & #3 & #4 & #5 & #6 & #7 & #8 & #9 \\
-      \hline
-    \end{tabularx}
-  \end{table}
+    \vspace{-\SpaceBeforeTable}
+    \begin{table}[H]
+    \small
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|}
+        \hline\rowcolor{gray!45}
+            \textbf{\arabic{problemcount}.1} & \textbf{\arabic{problemcount}.2} & \textbf{\arabic{problemcount}.3} & \textbf{\arabic{problemcount}.4} & \textbf{\arabic{problemcount}.5} & \textbf{\arabic{problemcount}.6} & \textbf{\arabic{problemcount}.7} & \textbf{\ifnum\value{lang}=1{Всего}\else{Барлығы}\fi} & \textbf{\ifnum\value{lang}=1{Вес}\else{Үлесі}\fi(\%)} \\
+        \hline
+            #1 & #2 & #3 & #4 & #5 & #6 & #7 & #8 & #9 \\
+        \hline
+        \end{tabularx}
+    \end{table}
 }
 
 
