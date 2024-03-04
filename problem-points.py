@@ -35,8 +35,8 @@ latex = latex + r"}"
 firstRow = ""
 
 for i in range(len(table_headers)-1):
-  firstRow = firstRow + r"\cellcolor{gray!50}\textbf{" + table_headers[i] + "} & "
-firstRow  = firstRow + r"\cellcolor{gray!50}\textbf{" + table_headers[len(table_headers)-1] + r"} \\"
+  firstRow = firstRow + r"\textbf{" + table_headers[i] + "} & "
+firstRow  = firstRow + r"\textbf{" + table_headers[len(table_headers)-1] + r"} \\"
 
 
 # The second row of the table
@@ -47,10 +47,10 @@ for i in range(len(table_values)-1):
 secondRow += table_values[len(table_values)-1] + r" \\"
 
 
-latex = latex + "\n" + r"\hline" + "\n" + firstRow + "\n" + r"\hline" + "\n" + secondRow + "\n" + r"\hline" + "\n" + "\end{tabularx}"
+latex = latex + "\n" + r"\hline\rowcolor{gray!45}" + "\n" + firstRow + "\n" + r"\hline" + "\n" + secondRow + "\n" + r"\hline" + "\n" + "\end{tabularx}"
 
 
-with open("python.tex", 'w') as f:
+with open("problem-points-table.tex", 'w') as f:
     f.write(begin)
     f.write(latex)
     f.write(closingCode)
