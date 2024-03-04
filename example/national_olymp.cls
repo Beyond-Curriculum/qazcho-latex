@@ -61,6 +61,9 @@
 
 \RequirePackage{tikz, lipsum, wrapfig, indentfirst}
 
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
 
 % Body of the class
 
