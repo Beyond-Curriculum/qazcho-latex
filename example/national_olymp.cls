@@ -421,7 +421,7 @@
 % Blanks for the problem. Argument - height
 \newcommand{\answerbox}[1]{
     \addtocounter{problempartcount}{1}
-    \raggedright
+    \raggedright\vspace{2ex}
     \begin{minipage}{\textwidth}
         \textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{0.5ex} \\
         \begin{tikzpicture}
@@ -429,7 +429,6 @@
         \end{tikzpicture}
     \end{minipage}
     \justifying
-    \vspace{2ex}
 }
 
 % Command that creates a blank without putting a number before it
@@ -439,12 +438,11 @@
         \draw (0, 0) rectangle (\textwidth, -#1);
     \end{tikzpicture}
     \justifying
-    \vspace{2ex}
 }
 
 % Answer box with custom numeration (for problem with 2 and more subproblems). Arguments: counter, height
 \newcommand{\ansbox}[2]{
-    \raggedright
+    \raggedright\vspace{2ex}
     \begin{minipage}{\textwidth}
         \textbf{\arabic{problemcount}.#1}\vspace{0.5ex} \\
         \begin{tikzpicture}
@@ -452,12 +450,11 @@
         \end{tikzpicture}
     \end{minipage}
     \justifying
-    \vspace{2ex}
 }
 
 
 
 \newcommand{\problempart}{
-  \addtocounter{problempartcount}{1}
-  \textbf{\arabic{problemcount}.\arabic{problempartcount}}\nopagebreak
+  \addtocounter{problempartcount}{1}\vspace{2ex}
+  \noindent\textbf{\arabic{problemcount}.\arabic{problempartcount}}\vspace{0.5ex}\nopagebreak
 }
