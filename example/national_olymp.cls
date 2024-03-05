@@ -64,6 +64,8 @@
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+\RequirePackage[italic, symbolgreek]{mathastext}
+
 
 % Body of the class
 
