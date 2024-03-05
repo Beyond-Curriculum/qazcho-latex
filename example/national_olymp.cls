@@ -116,8 +116,8 @@
 \newcommand{\kgmol}{\kilo\gram\per\mole}
 \newcommand{\ev}{\electronvolt}
 
-\DeclareSIUnit[quantity-product = \,]{\atm}{atm}
-\DeclareSIUnit[quantity-product = \,]{\torr}{torr}
+\DeclareSIUnit[quantity-product = \,]{\atm}{атм}
+\DeclareSIUnit[quantity-product = \,]{\torr}{торр}
 % \kg already exists, as well as \ms, \mm, \nm, \cm, \pm and others
 
 % Switching languages
